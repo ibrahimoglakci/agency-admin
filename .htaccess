@@ -1,0 +1,171 @@
+#Options -indexes
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^profil index.php?page=profil [L,NC]
+RewriteRule ^site-ayarlari index.php?page=site-ayarlari [L,NC]
+RewriteRule ^mail-ayarlari index.php?page=mail-ayarlari [L,NC]
+RewriteRule ^stok-takip index.php?page=stok-takip [L,NC]
+RewriteRule ^fiyat-liste index.php?page=fiyat-liste [L,NC]
+
+RewriteRule ^kargo-takip index.php?page=kargo-takip [L,NC]
+RewriteRule ^kargo-olustur index.php?page=kargo-olustur [L,NC]
+
+RewriteRule ^randevular index.php?page=randevular [L,NC]
+RewriteRule ^randevu-olustur index.php?page=randevu-olustur [L,NC]
+RewriteRule ^randevu-duzenle/(.*)$ index.php?page=randevu-duzenle&ID=$1 [NC]
+RewriteRule ^randevu-ertele/(.*)$ index.php?page=randevu-ertele&ID=$1 [NC]
+RewriteRule ^randevu-sil/(.*)$ index.php?page=randevu-sil&ID=$1 [NC]
+
+RewriteRule ^bekleyen-siparisler index.php?page=bekleyen-siparisler [L,NC]
+RewriteRule ^siparis-olustur index.php?page=siparis-olustur [L,NC]
+RewriteRule ^onaylanan-siparisler index.php?page=onaylanan-siparisler [L,NC]
+RewriteRule ^siparis-olustur index.php?page=siparis-olustur [L,NC]
+RewriteRule ^siparis-onayla/(.*)$ index.php?page=siparis-onayla&ID=$1 [NC]
+RewriteRule ^siparis-teslim-et/(.*)$ index.php?page=siparis-teslim-et&ID=$1 [NC]
+RewriteRule ^siparis-sil/(.*)$ index.php?page=siparis-sil&ID=$1 [NC]
+RewriteRule ^bekleyen-siparis-detay/(.*)$ index.php?page=bekleyen-siparis-detay&sipariskod=$1 [NC]
+
+RewriteRule ^banner-ekle index.php?page=banner-ekle [L,NC]
+RewriteRule ^banner-duzenle/(.*)$ index.php?page=banner-duzenle&ID=$1 [NC]
+RewriteRule ^banner-listesi$ index.php?page=banner-liste [NC]
+RewriteRule ^banner-sil/(.*)$ index.php?page=banner-sil&&ID=$1 [NC]
+
+RewriteRule ^referans-ekle index.php?page=referans-ekle [L,NC]
+RewriteRule ^referans-duzenle/(.*)$ index.php?page=referans-duzenle&ID=$1 [NC]
+RewriteRule ^referanslar$ index.php?page=referanslar [NC]
+RewriteRule ^referans-sil/(.*)$ index.php?page=referans-sil&&ID=$1 [NC]
+
+RewriteRule ^paket-ekle index.php?page=paket-ekle [L,NC]
+RewriteRule ^paket-listesi index.php?page=paket-listesi [L,NC]
+RewriteRule ^paket-sil/(.*)$ index.php?page=paket-sil&&ID=$1 [NC]
+RewriteRule ^paket-duzenle/(.*)$ index.php?page=paket-duzenle&ID=$1 [NC]
+RewriteRule ^paket-detay/(.*)$ index.php?page=paket-detay&ID=$1 [NC]
+
+RewriteRule ^modul-ekle index.php?page=add-module [L,NC]
+
+RewriteRule ^kategori-ekle index.php?page=kategori-ekle [L,NC]
+RewriteRule ^kategoriler index.php?page=kategoriler [L,NC]
+RewriteRule ^kategori-sil/(.*)$ index.php?page=kategori-sil&&ID=$1 [NC]
+RewriteRule ^kategori-duzenle/(.*)$ index.php?page=kategori-duzenle&ID=$1 [NC]
+
+RewriteRule ^resimler/(.*)/(.*)$ index.php?page=resimler&tablo=$1&ID=$2 [NC]
+RewriteRule ^resim-sil/(.*)/(.*)/(.*)$ index.php?page=resim-sil&tablo=$1&ID=$2&silinecekID=$3 [NC]
+
+RewriteRule ^uye-ekle index.php?page=uye-ekle [L,NC]
+RewriteRule ^uye-listesi index.php?page=uye-listesi [L,NC]
+RewriteRule ^giris-yap giris-yap.php [L,NC]
+RewriteRule ^cikis-yap index.php?page=cikis-yap [L,NC]
+RewriteRule ^hesap-onay/(.*)$ index.php?page=hesap-onay&email=$1 [NC]
+
+RewriteRule ^siparisdurumupdate$ siparisdurumupdate.php [L,NC]
+RewriteRule ^siparissorumlusu$ siparissorumlusu.php [L,NC]
+
+
+RewriteRule ^blog-duzenle/(.*)$ index.php?page=blog-duzenle&ID=$1 [L,NC]
+RewriteRule ^blog-sil/(.*)$ index.php?page=blog-sil&ID=$1 [L,NC]
+RewriteRule ^blog-ekle index.php?page=blog-ekle [L,NC]
+RewriteRule ^blog index.php?page=blog [L,NC]
+
+RewriteRule ^hizmetler index.php?page=hizmetler-listesi [NC]
+RewriteRule ^hizmet-duzenle/(.*)$ index.php?page=hizmet-duzenle&ID=$1 [L,NC]
+RewriteRule ^hizmet-sil/(.*)$ index.php?page=hizmet-sil&ID=$1 [L,NC]
+RewriteRule ^hizmet-ekle index.php?page=hizmet-ekle [L,NC]
+
+RewriteRule ^posta-kutusu/(.*)$ index.php?page=posta-kutusu&postadurum=$1 [L,NC]
+RewriteRule ^posta-kutusu$ index.php?page=posta-kutusu [L,NC]
+RewriteRule ^posta-gonder$ index.php?page=posta-gonder [L,NC]
+RewriteRule ^posta-cevapla/(.*)/(.*)$ index.php?page=posta-gonder&gonderilecek=$1&cevaplananID=$2 [L,NC]
+RewriteRule ^posta-detay/(.*)$ index.php?page=posta-detay&ID=$1 [L,NC]
+
+
+RewriteRule ^gelirler index.php?page=gelirler [L,NC]
+RewriteRule ^gelir-ekle index.php?page=gelir-ekle [L,NC]
+RewriteRule ^gelir-sil/(.*)$ index.php?page=gelir-sil&&ID=$1 [NC]
+RewriteRule ^gelir-duzenle/(.*)$ index.php?page=gelir-duzenle&ID=$1 [NC]
+
+RewriteRule ^giderler index.php?page=giderler [L,NC]
+RewriteRule ^gider-ekle index.php?page=gider-ekle [L,NC]
+RewriteRule ^gider-sil/(.*)/(.*)$ index.php?page=gider-sil&&kategori=$1&&ID=$2 [NC]
+RewriteRule ^gider-duzenle/(.*)/(.*)$ index.php?page=gider-duzenle&kategori=$1&ID=$2 [NC]
+
+RewriteRule ^populer-urunler index.php?page=populer-urunler [L,NC]
+
+RewriteRule ^analiz-grafikleri index.php?page=analiz-grafikleri [L,NC]
+
+# Enable caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Enable compression
+<IfModule mod_deflate.c>
+    <IfModule mod_filter.c>
+        AddOutputFilterByType DEFLATE "application/atom+xml" \
+                                      "application/javascript" \
+                                      "application/json" \
+                                      "application/ld+json" \
+                                      "application/manifest+json" \
+                                      "application/rss+xml" \
+                                      "application/schema+json" \
+                                      "application/vnd.geo+json" \
+                                      "application/vnd.ms-fontobject" \
+                                      "application/x-font-ttf" \
+                                      "application/x-javascript" \
+                                      "application/x-web-app-manifest+json" \
+                                      "application/xhtml+xml" \
+                                      "application/xml" \
+                                      "font/eot" \
+                                      "font/opentype" \
+                                      "image/bmp" \
+                                      "image/svg+xml" \
+                                      "image/vnd.microsoft.icon" \
+                                      "image/x-icon" \
+                                      "text/cache-manifest" \
+                                      "text/calendar" \
+                                      "text/css" \
+                                      "text/javascript" \
+                                      "text/plain" \
+                                      "text/xml" \
+                                      "font/woff" \
+                                      "font/woff2" \
+                                      "application/java-archive" \
+                                      "application/msword" \
+                                      "application/pdf" \
+                                      "application/x-bzip" \
+                                      "application/x-csh" \
+                                      "application/x-sh" \
+                                      "application/x-shockwave-flash" \
+                                      "application/x-tar" \
+                                      "application/xhtml+xml" \
+                                      "application/zip" \
+                                      "application/octet-stream" \
+                                      "audio/midi" \
+                                      "audio/mpeg" \
+                                      "audio/ogg" \
+                                      "audio/wav" \
+                                      "image/gif" \
+                                      "image/ico" \
+                                      "image/jpeg" \
+                                      "image/jpg" \
+                                      "image/png" \
+                                      "image/svg+xml" \
+                                      "image/webp" \
+                                      "video/3gpp" \
+                                      "video/mp4" \
+                                      "video/mpeg" \
+                                      "video/ogg" \
+                                      "video/quicktime" \
+                                      "video/webm" \
+                                      "video/x-flv" \
+                                      "video/x-msvideo"
+    </IfModule>
+</IfModule>

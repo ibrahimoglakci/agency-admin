@@ -1,0 +1,1 @@
+function play_sound_notify(){var t=document.createElement("audio");t.setAttribute("src","assets/sounds/notify.mp3"),t.setAttribute("autoplay","autoplay"),t.load(),t.play()}

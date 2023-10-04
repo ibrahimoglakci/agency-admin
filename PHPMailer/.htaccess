@@ -1,0 +1,6 @@
+#Options -Indexes
+
+
+ErrorDocument 404 /copy3/404/index.html
+
+ErrorDocument 403 /copy3/403/index.html
