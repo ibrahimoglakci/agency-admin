@@ -66,7 +66,7 @@ Follow the steps provided in the [Usage](#usage) section of the main README file
 
 ## License
 
-This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
 
 Feel free to explore and customize the admin panel to suit your agency's needs!
